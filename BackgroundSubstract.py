@@ -14,7 +14,7 @@ class BackgroundSubstract:
 		return self.model
 
 
-cap = cv2.VideoCapture('Vid1.mp4')
+cap = cv2.VideoCapture('/home/miko/workspace/VideoTracking/skenario_stop.mp4')
 newObj = BackgroundSubstract(int(cap.get(4)),int(cap.get(3)), 0.01)
 
 
