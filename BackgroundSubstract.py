@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-class BackgroundSubstract:
+class BackgroundSubstractClass:
 
 	def __init__(self, height, width, alpha):
 		self.height = height
