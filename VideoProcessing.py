@@ -47,6 +47,7 @@ while (cap.isOpened):
         detector = cv2.SimpleBlobDetector_create(param)
         keypoint = detector.detect(image)
         objects = []
+        cv2.imshow("object",image)
         if count > 400:
             for k in keypoint:
                 x,y = k.pt
@@ -67,10 +68,10 @@ while (cap.isOpened):
                 image_object = frame[int(y1):int(y2),int(x1):int(x2)]
                 image_object = cv2.resize(image_object,(32,32))
                 a.append(image_object)
-                cv2.imshow("object",image_object)
+               
                 ob_class = models.model.predict(np.array(a))
                 if ob_class[0][0] >= ob_class[0][1]:
-                    ob_class = "big ass car"
+                    ob_class = "big vehicle"
                 else:
                     ob_class = "car"
                 ob = MyObjects(image_object,ob_class,upleft_y_x,bottom_right_y_x)
